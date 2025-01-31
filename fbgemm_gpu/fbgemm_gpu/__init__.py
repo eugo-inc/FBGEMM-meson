@@ -6,7 +6,6 @@
 # LICENSE file in the root directory of this source tree.
 
 import logging
-import os
 
 import torch
 
@@ -14,7 +13,7 @@ import torch
 def _load_library(filename: str) -> None:
     """Load a shared library from the given filename."""
     try:
-        torch.ops.load_library(os.path.join(os.path.dirname(__file__), filename))
+        torch.ops.load_library(filename)
         logging.info(f"Successfully loaded: '{filename}'")
     except Exception as error:
         logging.error(f"Could not load the library '{filename}': {error}")

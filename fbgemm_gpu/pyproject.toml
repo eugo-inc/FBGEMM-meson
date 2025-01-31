@@ -1,0 +1,35 @@
+[build-system]
+build-backend = 'mesonpy'
+
+# Potentially, lower versions may work, yet they haven't been tested nor guaranteed to work.
+# The only 2 hard requirements are: `meson>=1.3.0` and `cython>=3.0.0`.
+requires = [
+    'meson_python>=0.16.0',
+    'meson>=1.5.2',
+
+    '@HELP - do we need all of these below now? probably not but want to check so leaving here',
+    'setuptools',
+    'scikit_build',
+    'torch',
+    'tabulate',
+    'setuptools_git_versioning'
+]
+
+
+[project]
+name = 'fbgemm_gpu'
+version = '3.0.0.dev0'
+readme = 'README.rst'
+requires-python = '>=3.12'
+license = {file = 'LICENSE'}
+
+
+# These and `[project.optional-dependencies]` should be synced against `setup.py`, `requirements.txt`. and PyPi API:
+#
+dependencies = [
+    'numpy>=2.0.2',
+    'pyre-extensions',
+    'scikit-build',
+    'torch',
+    'tabulate'
+]
