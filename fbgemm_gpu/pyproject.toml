@@ -6,22 +6,15 @@ build-backend = 'mesonpy'
 requires = [
     'meson_python>=0.16.0',
     'meson>=1.5.2',
-
-    '@HELP - do we need all of these below now? probably not but want to check so leaving here',
-    'setuptools',
-    'scikit_build',
-    'torch',
-    'tabulate',
-    'setuptools_git_versioning'
 ]
 
 
 [project]
-name = 'fbgemm_gpu'
-version = '3.0.0.dev0'
-readme = 'README.rst'
+name = 'fbgemm_gpu_cpu'
+version = '2.0.0.dev0'
+readme = 'README.md'
 requires-python = '>=3.12'
-license = {file = 'LICENSE'}
+license = {file = '../LICENSE'}
 
 
 # These and `[project.optional-dependencies]` should be synced against `setup.py`, `requirements.txt`. and PyPi API:
@@ -29,7 +22,5 @@ license = {file = 'LICENSE'}
 dependencies = [
     'numpy>=2.0.2',
     'pyre-extensions',
-    'scikit-build',
     'torch',
-    'tabulate'
 ]
